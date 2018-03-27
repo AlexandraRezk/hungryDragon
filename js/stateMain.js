@@ -6,7 +6,7 @@ var StateMain={
            game.scale.forceOrientation(true, false);
        }
         
-        game.load.spritesheet("dragon","images/main/dragon.png",120,85,4);
+        game.load.spritesheet("flyingBex","images/main/BexFlying.png",112,80,10);
         game.load.image("background", "images/main/background.png");
         game.load.spritesheet("candy","images/main/candy.png",52,50,8);
         game.load.image("balloon", "images/main/thought.png")
@@ -39,10 +39,10 @@ var StateMain={
         this.backgroundMusic.volume=.5;
         this.backgroundMusic.loop=true;
         
-        //dragon
-        this.dragon = game.add.sprite(0,0,"dragon");
-        this.dragon.animations.add('fly', [0,1,2,3], 12, true);
-        this.dragon.animations.play('fly');
+        //flyingBex
+        this.flyingBex = game.add.sprite(0,0,"flyingBex");
+        this.flyingBex.animations.add('fly', [0,1,2,3,4,5,6,7,8,9], 12, true);
+        this.flyingBex.animations.play('fly');
         
         //background
         this.background = game.add.tileSprite(0, game.height-480, game.width, 480, 'background');
@@ -54,8 +54,8 @@ var StateMain={
             this.bottom=this.background.y+360;
        }
         
-        this.dragon.bringToTop();
-        this.dragon.y = this.top;
+        this.flyingBex.bringToTop();
+        this.flyingBex.y = this.top;
       
         this.background.autoScroll(-100,0);
         
@@ -91,9 +91,9 @@ var StateMain={
         this.btnSound=game.add.sprite(70,20, "soundButtons");
         this.btnMusic.frame=2;
         
-          game.physics.enable([this.dragon,this.candies], Phaser.Physics.ARCADE);
-        this.dragon.body.gravity.y=this.fall;
-        this.dragon.body.immovable = true;
+          game.physics.enable([this.flyingBex,this.candies], Phaser.Physics.ARCADE);
+        this.flyingBex.body.gravity.y=this.fall;
+        this.flyingBex.body.immovable = true;
         
        this.setListeners(); 
         this.resetThink();
@@ -172,9 +172,9 @@ var StateMain={
     },
     
     flap:function(){
-        this.dragon.body.velocity.y = -this.lift;
+        this.flyingBex.body.velocity.y = -this.lift;
     },
-    onEat:function(dragon,candy){
+    onEat:function(flyingBex,candy){
         if(this.think.frame == candy.frame){
             candy.kill();
             this.resetThink();
@@ -201,24 +201,24 @@ var StateMain={
     },
     
     update:function(){  
-        game.physics.arcade.collide(this.dragon,this.candies,null,this.onEat, this);
+        game.physics.arcade.collide(this.flyingBex,this.candies,null,this.onEat, this);
         
-        this.balloonGroup.y = this.dragon.y - 60;
+        this.balloonGroup.y = this.flyingBex.y - 60;
     
         if(game.input.activePointer.isDown){
             this.flap();
         }
         
-        if(this.dragon.y < this.top){
-            this.dragon.y = this.top;
-            this.dragon.body.velocity.y = 0;
+        if(this.flyingBex.y < this.top){
+            this.flyingBex.y = this.top;
+            this.flyingBex.body.velocity.y = 0;
         }
         
-        if(this.dragon.y > this.bottom){
-            this.dragon.y = this.bottom;
-            this.dragon.body.gravity.y = 0;
+        if(this.flyingBex.y > this.bottom){
+            this.flyingBex.y = this.bottom;
+            this.flyingBex.body.gravity.y = 0;
         } else{
-            this.dragon.body.gravity.y = 500;
+            this.flyingBex.body.gravity.y = 500;
         }
     }    
     

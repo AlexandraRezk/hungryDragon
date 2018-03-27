@@ -3,7 +3,7 @@ var StateInstruction={
    preload:function()
     {
        game.load.spritesheet("buttons", "images/ui/buttons.png", 265, 75);
-        game.load.spritesheet("dragon","images/main/dragon.png",120,85,4);
+        game.load.spritesheet("flyingBex","images/main/BexFlying.png",112,80,10);
         
         game.load.spritesheet("candy","images/main/candy.png",52,50,8);
         game.load.image("balloon", "images/main/thought.png")
@@ -14,14 +14,14 @@ var StateInstruction={
         this.buttonStart = game.add.button(game.world.centerX,game.world.centerY+100,"buttons",this.startGame,this,6,7,6);
         this.buttonStart.anchor.set(0.5,0.5);
         
-        //dragon
-        this.dragon = game.add.sprite(game.world.centerX,game.world.centerY,"dragon");
-        this.dragon.anchor.set(0.5,0.5);
-        this.dragon.animations.add('fly', [0,1,2,3], 12, true);
-        this.dragon.animations.play('fly');
+        //flyingBex
+        this.flyingBex = game.add.sprite(game.world.centerX,game.world.centerY,"flyingBex");
+        this.flyingBex.anchor.set(0.5,0.5);
+        this.flyingBex.animations.add('fly', [0,1,2,3,4,5,6,7,8,9], 12, true);
+        this.flyingBex.animations.play('fly');
         game.stage.backgroundColor="#26C9FF";
         
-        this.inText=game.add.text(game.world.centerX,30, "Eat only what the dragon is thinking!!");
+        this.inText=game.add.text(game.world.centerX,30, "Gather only what Bex is thinking!!");
         this.inText.fill = "#000000";
         this.inText.anchor.set(0.5,0.5);
         
@@ -33,8 +33,8 @@ var StateInstruction={
         this.balloonGroup.add(this.think);
         this.balloonGroup.scale.x=.5;
         this.balloonGroup.scale.y=.5;
-        this.balloonGroup.x=this.dragon.x-20;
-        this.balloonGroup.y=this.dragon.y-100;
+        this.balloonGroup.x=this.flyingBex.x-20;
+        this.balloonGroup.y=this.flyingBex.y-100;
     },
     startGame:function(){
         game.state.start("StateMain");

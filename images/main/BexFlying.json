@@ -1,0 +1,92 @@
+{"frames": [
+
+{
+	"filename": "FlyingBexVacuum_00000.png",
+	"frame": {"x":0,"y":0,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00001.png",
+	"frame": {"x":0,"y":80,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00002.png",
+	"frame": {"x":0,"y":160,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00003.png",
+	"frame": {"x":0,"y":240,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00004.png",
+	"frame": {"x":0,"y":320,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00005.png",
+	"frame": {"x":0,"y":400,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00006.png",
+	"frame": {"x":0,"y":480,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00007.png",
+	"frame": {"x":0,"y":560,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00008.png",
+	"frame": {"x":0,"y":640,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+},
+{
+	"filename": "FlyingBexVacuum_00009.png",
+	"frame": {"x":0,"y":720,"w":112,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":80},
+	"sourceSize": {"w":112,"h":80}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "BexFlying.png",
+	"format": "RGBA8888",
+	"size": {"w":112,"h":800},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:52c9c407634644faaa00a42481786d6b:fd0219ae2f0c276e8c09e3aeda643f9b:e7a4d2de25f20fad6f64f6bddf144034$"
+}
+}

@@ -3,7 +3,7 @@ var StateOver={
    preload:function()
     {
        game.load.spritesheet("buttons", "images/ui/buttons.png", 265, 75);
-        game.load.spritesheet("dragon","images/main/dragon.png",120,85,4);
+        game.load.spritesheet("flyingBex","images/main/BexFlying.png",112,80,10);
     },
     
     create:function()
@@ -25,12 +25,12 @@ var StateOver={
         this.scoreLabel.fontSize = 32;
         this.scoreLabel.anchor.set(0.5,0.5);
         
-        //dragon
-        this.dragon = game.add.sprite(game.world.centerX,game.world.centerY,"dragon");
-        this.dragon.anchor.set(0.5,0.5);
-        this.dragon.animations.add('fly', [0,1,2,3], 12, true);
-        this.dragon.animations.play('fly');
-        this.dragon.scale.x=-1;
+        //flyingBex
+        this.flyingBex = game.add.sprite(game.world.centerX,game.world.centerY,"flyingBex");
+        this.flyingBex.anchor.set(0.5,0.5);
+        this.flyingBex.animations.add('fly', [0,1,2,3,4,5,6,7,8,9], 12, true);
+        this.flyingBex.animations.play('fly');
+        this.flyingBex.scale.x=-1;
         game.stage.backgroundColor="#26C9FF";
     },
     
