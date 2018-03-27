@@ -8,7 +8,7 @@ var StateMain={
         
         game.load.spritesheet("flyingBex","images/main/BexFlying.png",112,80,10);
         game.load.image("background", "images/main/background.png");
-        game.load.spritesheet("candy","images/main/candy.png",52,50,8);
+        game.load.spritesheet("bexStuff","images/main/BexStuff.png",52,50,8);
         game.load.image("balloon", "images/main/thought.png")
         game.load.spritesheet("soundButtons","images/ui/soundButtons.png",44,44,4);
         game.load.audio("burp", "sounds/burp.mp3");
@@ -59,16 +59,16 @@ var StateMain={
       
         this.background.autoScroll(-100,0);
         
-        //candies
-        this.candies = game.add.group();
-        this.candies.createMultiple(40,'candy');
-        this.candies.setAll('checkWorldBounds',true);
-        this.candies.setAll('outOfBoundsKill',true);
+        //bexsStuff
+        this.bexsStuff = game.add.group();
+        this.bexsStuff.createMultiple(40,'bexStuff');
+        this.bexsStuff.setAll('checkWorldBounds',true);
+        this.bexsStuff.setAll('outOfBoundsKill',true);
         
         //thought
         this.balloonGroup=game.add.group();
         this.balloon = game.add.sprite(0,0,"balloon");
-        this.think = game.add.sprite(36,26,"candy");
+        this.think = game.add.sprite(36,26,"bexStuff");
         this.balloonGroup.add(this.balloon);
         this.balloonGroup.add(this.think);
         this.balloonGroup.scale.x=.5;
@@ -91,7 +91,7 @@ var StateMain={
         this.btnSound=game.add.sprite(70,20, "soundButtons");
         this.btnMusic.frame=2;
         
-          game.physics.enable([this.flyingBex,this.candies], Phaser.Physics.ARCADE);
+          game.physics.enable([this.flyingBex,this.bexsStuff], Phaser.Physics.ARCADE);
         this.flyingBex.body.gravity.y=this.fall;
         this.flyingBex.body.immovable = true;
         
@@ -106,7 +106,7 @@ var StateMain={
         game.scale.leaveIncorrectOrientation.add(this.rightWay,this);
         }
         
-        game.time.events.loop(Phaser.Timer.SECOND*this.delay, this.fireCandy, this);
+        game.time.events.loop(Phaser.Timer.SECOND*this.delay, this.firebexStuff, this);
         
         this.btnSound.inputEnabled=true;
         this.btnSound.events.onInputDown.add(this.toggleSound,this);
@@ -151,16 +151,16 @@ var StateMain={
         
     },
     
-    fireCandy:function(){
-      var candy = this.candies.getFirstDead();
+    firebexStuff:function(){
+      var bexStuff = this.bexsStuff.getFirstDead();
         var yy = game.rnd.integerInRange(this.top,this.bottom);
         var xx = game.width-100;
         var type = game.rnd.integerInRange(0,7);
         
-        candy.frame = type;
-        candy.reset(xx,yy);
-        candy.enabled = true;
-        candy.body.velocity.x = -200;
+        bexStuff.frame = type;
+        bexStuff.reset(xx,yy);
+        bexStuff.enabled = true;
+        bexStuff.body.velocity.x = -200;
     },
     
     wrongWay:function(){
@@ -174,9 +174,9 @@ var StateMain={
     flap:function(){
         this.flyingBex.body.velocity.y = -this.lift;
     },
-    onEat:function(flyingBex,candy){
-        if(this.think.frame == candy.frame){
-            candy.kill();
+    onEat:function(flyingBex,bexStuff){
+        if(this.think.frame == bexStuff.frame){
+            bexStuff.kill();
             this.resetThink();
             score++;
             this.scoreText.text = score;
@@ -188,7 +188,7 @@ var StateMain={
             if(soundOn==true){
                 this.burp.play();
              }
-            candy.kill();
+            bexStuff.kill();
             game.state.start("StateOver");
              
         }
@@ -201,7 +201,7 @@ var StateMain={
     },
     
     update:function(){  
-        game.physics.arcade.collide(this.flyingBex,this.candies,null,this.onEat, this);
+        game.physics.arcade.collide(this.flyingBex,this.bexsStuff,null,this.onEat, this);
         
         this.balloonGroup.y = this.flyingBex.y - 60;
     

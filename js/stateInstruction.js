@@ -5,7 +5,7 @@ var StateInstruction={
        game.load.spritesheet("buttons", "images/ui/buttons.png", 265, 75);
         game.load.spritesheet("flyingBex","images/main/BexFlying.png",112,80,10);
         
-        game.load.spritesheet("candy","images/main/candy.png",52,50,8);
+        game.load.spritesheet("bexStuff","images/main/BexStuff.png",52,50,8);
         game.load.image("balloon", "images/main/thought.png")
     },
     
@@ -28,7 +28,7 @@ var StateInstruction={
          //thought
         this.balloonGroup=game.add.group();
         this.balloon = game.add.sprite(0,0,"balloon");
-        this.think = game.add.sprite(36,26,"candy");
+        this.think = game.add.sprite(36,26,"bexStuff");
         this.balloonGroup.add(this.balloon);
         this.balloonGroup.add(this.think);
         this.balloonGroup.scale.x=.5;
