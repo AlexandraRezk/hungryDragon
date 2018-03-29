@@ -19,9 +19,12 @@ var StateInstruction={
         this.flyingBex.anchor.set(0.5,0.5);
         this.flyingBex.animations.add('fly', [0,1,2,3,4,5,6,7,8,9], 12, true);
         this.flyingBex.animations.play('fly');
-        game.stage.backgroundColor="#26C9FF";
+        game.stage.backgroundColor="#1f8ecb";
         
-        this.inText=game.add.text(game.world.centerX,30, "Gather only what Bex is thinking!!");
+        this.titleText=game.add.text(game.world.centerX,30,"Vacuum Flight Night",{ font: "50px Mina", fill: "#9afef7", stroke: "#222222", strokeThickness: 4, align:"center" });
+        this.titleText.anchor.set(0.5,0.5);
+        
+        this.inText=game.add.text(game.world.centerX,100, "Gather only what Bex is thinking!!");
         this.inText.fill = "#000000";
         this.inText.anchor.set(0.5,0.5);
         

@@ -31,7 +31,7 @@ var StateOver={
         this.flyingBex.animations.add('fly', [0,1,2,3,4,5,6,7,8,9], 12, true);
         this.flyingBex.animations.play('fly');
         this.flyingBex.scale.x=-1;
-        game.stage.backgroundColor="#26C9FF";
+        game.stage.backgroundColor="#1f8ecb";
     },
     
     replay:function(){

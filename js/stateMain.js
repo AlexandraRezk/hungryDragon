@@ -7,12 +7,12 @@ var StateMain={
        }
         
         game.load.spritesheet("flyingBex","images/main/BexFlying.png",112,80,10);
-        game.load.image("background", "images/main/background.png");
+        game.load.image("background", "images/main/citybackground.png");
         game.load.spritesheet("bexStuff","images/main/BexStuff.png",52,50,8);
         game.load.image("balloon", "images/main/thought.png")
         game.load.spritesheet("soundButtons","images/ui/soundButtons.png",44,44,4);
-        game.load.audio("burp", "sounds/burp.mp3");
-        game.load.audio("gulp", "sounds/gulp.mp3");
+        game.load.audio("deathSound", "sounds/Death.mp3");
+        game.load.audio("pointSound", "sounds/Collect_Point.mp3");
         game.load.audio("backgroundMusic", "sounds/background.mp3");
     },
     
@@ -33,8 +33,8 @@ var StateMain={
         this.bottom=game.height - 120;
         
         //sounds
-        this.burp=game.add.audio("burp");
-        this.glup=game.add.audio("gulp");
+        this.deathSound=game.add.audio("deathSound");
+        this.pointSound=game.add.audio("pointSound");
         this.backgroundMusic=game.add.audio("backgroundMusic");
         this.backgroundMusic.volume=.5;
         this.backgroundMusic.loop=true;
@@ -181,12 +181,12 @@ var StateMain={
             score++;
             this.scoreText.text = score;
             if(soundOn==true){
-                this.glup.play();
+                this.pointSound.play();
             }
         } else{
             this.backgroundMusic.stop();
             if(soundOn==true){
-                this.burp.play();
+                this.deathSound.play();
              }
             bexStuff.kill();
             game.state.start("StateOver");
